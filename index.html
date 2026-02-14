@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti ❤️</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff4b7d,#ff758c);
+  font-family:Arial, sans-serif;
+  color:white;
+}
+
+.carta{
+  background:white;
+  color:#333;
+  padding:25px;
+  border-radius:15px;
+  width:320px;
+  text-align:center;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+h2{
+  color:#ff4b7d;
+}
+
+.contador{
+  margin-top:15px;
+  font-weight:bold;
+  color:#ff4b7d;
+}
+
+.corazon{
+  font-size:50px;
+  animation:latido 1s infinite;
+}
+
+@keyframes latido{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+<body>
+
+<div class="carta">
+  <div class="corazon">❤️</div>
+
+  <h2>Para el amor de mi vida</h2>
+
+  <p>
+  Si pudiera elegir un lugar seguro,<br>
+  siempre sería contigo.<br><br>
+
+  No importa la distancia,<br>
+  porque mi corazón siempre encuentra el camino hacia ti.<br><br>
+
+  Te amo más de lo que las palabras pueden explicar.
+  </p>
+
+  <div class="contador" id="contador"></div>
+
+</div>
+
+<script>
+
+// CAMBIA ESTA FECHA POR CUANDO EMPEZARON
+let fechaInicio = new Date("2025-01-01 00:00:00");
+
+function actualizarContador(){
+  let ahora = new Date();
+  let diferencia = ahora - fechaInicio;
+
+  let dias = Math.floor(diferencia / (1000*60*60*24));
+  let horas = Math.floor((diferencia / (1000*60*60)) % 24);
+  let minutos = Math.floor((diferencia / (1000*60)) % 60);
+  let segundos = Math.floor((diferencia / 1000) % 60);
+
+  document.getElementById("contador").innerHTML =
+  "Mi amor por ti comenzó hace:<br>" +
+  dias + " días " + horas + " horas " +
+  minutos + " minutos " + segundos + " segundos ❤️";
+}
+
+setInterval(actualizarContador,1000);
+
+</script>
+
+</body>
+</html>
